@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Набронировал</title>
+</head>
+<body>
+<div>
+    {% for hotel in hotels %}
+    <div class="flex justify-left flex-row  border-4 rounded-md size-fit md:size-auto">
+        <img class="m-2 rounded-r-lg" src="{{ url_for('static', path='images/' + hotel.image_id|string + '.webp') }}"
+             alt='Фото отеля'
+             width="300px">
+        <div class="relative flex-col">
+            <div class='align-top' style="margin-left: 8px">
+                <h1 class="font-bold text-4xl">{{hotel.name}}</h1>
+                <h4 class="font-semibold text-xl">{{hotel.location}}</h4>
+            </div>
+            <div style="margin-left: 8px">
+                <span class="absolute bottom-4 left-10px">
+                <h4 class="font-medium text-lg">{{hotel.services}}</h4>
+                <h4 class="font-medium text-lg">Всего номеров: {{hotel.rooms_quantity}}</h4>
+                <h4 class="font-medium text-lg">Свободных номеров: {{hotel.rooms_left}}</h4>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+</body>
+</html>
