@@ -1,4 +1,4 @@
-<div>
+<div align='center'>
         <img src="https://i.ibb.co/d46tqNh/UZOE1-FOXm1s.jpg", alt='data_base diagram'>
   
 </div>
